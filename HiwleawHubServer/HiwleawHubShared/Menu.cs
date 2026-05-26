@@ -1,0 +1,23 @@
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace HiwleawHubShared
+{
+    [Table("menus")]
+    public class Menu
+    {
+        [Column("id")]
+        public int Id { get; set; }
+
+        [Column("restaurant_id")] // อันนี้สำคัญมาก ต้องเป็น restaurant_id ตามฐานข้อมูล
+        public int RestaurantId { get; set; }
+
+        [Column("name")]
+        public string Name { get; set; } = string.Empty;
+
+        [Column("price")]
+        public decimal Price { get; set; }
+        public string? ImageUrl { get; set; }
+        [NotMapped]
+        public double AverageRating { get; set; }
+    }
+}
